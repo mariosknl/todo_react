@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Todo = ({ text, deleteHandler, id }) => {
   const [newValue, setNewValue] = useState(text);
   const [editValue, setEditValue] = useState(false);
 
-  const updateHandler = (id, e) => {
+  const updateHandler = (e) => {
     setEditValue(true);
-    setNewValue(e.target.value);
   };
+
+  useEffect(() => {}, [editValue]);
+
   return (
     <div className='flex flex-row w-full my-2'>
       <button
@@ -21,11 +23,12 @@ const Todo = ({ text, deleteHandler, id }) => {
           type='text'
           value={newValue}
           onChange={(e) => setNewValue(e.target.value)}
+          className='w-full p-3 ml-3 text-5xl text-center border-2 border-gray-600 rounded-xl'
         />
       ) : (
         <li
           className='w-full p-3 ml-3 text-5xl text-center border-2 border-gray-600 rounded-xl'
-          onClick={(e) => console.log(id, e)}
+          onClick={(e) => updateHandler(id, e)}
         >
           {text}
         </li>
