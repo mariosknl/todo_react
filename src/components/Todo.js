@@ -3,7 +3,7 @@ import Button from './Button';
 import Input from './Input';
 import Item from './Item';
 
-const Todo = ({ text, deleteHandler, id, onSubmit }) => {
+const Todo = ({ text, deleteHandler, id }) => {
   const [newValue, setNewValue] = useState(text);
   const [editValue, setEditValue] = useState(false);
 
@@ -18,10 +18,10 @@ const Todo = ({ text, deleteHandler, id, onSubmit }) => {
       </Button>
       {editValue ? (
         <Input
-          type='text'
           value={newValue}
-          onChange={(e) => setNewValue(e.target.value)}
           className='border-gray-300'
+          onChange={(e) => setNewValue(e.target.value)}
+          onBlur={(e) => setNewValue(e.target.value)}
         />
       ) : (
         <Item onClick={() => updateHandler(id)}>{text}</Item>

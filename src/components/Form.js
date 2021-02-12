@@ -16,9 +16,10 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
     >
       <Button type='submit'>+</Button>
       <Input
-        onChange={(e) => setInputText(e.target.value)}
         value={inputText}
+        onChange={(e) => setInputText(e.target.value)}
         onSubmit={handleSubmit}
+        onBlur={(e) => setInputText(e.target.value)}
       />
     </form>
   );
