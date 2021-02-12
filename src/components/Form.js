@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
+import Button from './Button';
+import Input from './Input';
 
 const Form = ({ setInputText, todos, setTodos, inputText }) => {
   const handleSubmit = (e) => {
@@ -8,19 +10,15 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
   };
 
   return (
-    <form className='flex flex-row items-center w-full mt-16 justify-items-center'>
-      <button
-        type='submit'
-        onClick={handleSubmit}
-        className='p-3 text-5xl font-thin text-green-200 border-2 border-green-200 rounded-lg'
-      >
-        +
-      </button>
-      <input
-        type='text'
-        className='w-full py-2 ml-3 text-5xl font-bold text-center border-2 border-green-200 rounded-md'
+    <form
+      className='flex flex-row items-center w-full mt-16 justify-items-center'
+      onSubmit={handleSubmit}
+    >
+      <Button type='submit'>+</Button>
+      <Input
         onChange={(e) => setInputText(e.target.value)}
         value={inputText}
+        onSubmit={handleSubmit}
       />
     </form>
   );

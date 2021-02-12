@@ -1,37 +1,30 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import Button from './Button';
+import Input from './Input';
+import Item from './Item';
 
-const Todo = ({ text, deleteHandler, id }) => {
+const Todo = ({ text, deleteHandler, id, onSubmit }) => {
   const [newValue, setNewValue] = useState(text);
   const [editValue, setEditValue] = useState(false);
 
-  const updateHandler = (e) => {
+  const updateHandler = () => {
     setEditValue(true);
   };
 
-  useEffect(() => {}, [editValue]);
-
   return (
     <div className='flex flex-row w-full my-2'>
-      <button
-        onClick={deleteHandler}
-        className='p-1 text-5xl text-gray-400 border-2 border-red-600 rounded-lg'
-      >
+      <Button type='button' onClick={deleteHandler}>
         &times;
-      </button>
+      </Button>
       {editValue ? (
-        <input
+        <Input
           type='text'
           value={newValue}
           onChange={(e) => setNewValue(e.target.value)}
-          className='w-full p-3 ml-3 text-5xl text-center border-2 border-gray-600 rounded-xl'
+          className='border-gray-300'
         />
       ) : (
-        <li
-          className='w-full p-3 ml-3 text-5xl text-center border-2 border-gray-600 rounded-xl'
-          onClick={(e) => updateHandler(id, e)}
-        >
-          {text}
-        </li>
+        <Item onClick={() => updateHandler(id)}>{text}</Item>
       )}
     </div>
   );

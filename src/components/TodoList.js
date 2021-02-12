@@ -1,10 +1,6 @@
-import { useState } from 'react';
 import Todo from './Todo';
 
 const TodoList = ({ todos, setTodos }) => {
-  const [edit, setEdit] = useState(false);
-  const [editText, setEditText] = useState('');
-
   const deleteHandler = (id) => {
     setTodos(todos.filter((x) => x.id !== id));
   };
