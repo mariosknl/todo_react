@@ -1,10 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
 const Form = ({ setInputText, todos, setTodos, inputText }) => {
-  const handleText = (e) => {
-    setInputText(e.target.value);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setTodos([...todos, { text: inputText, id: uuidv4() }]);
@@ -22,8 +18,8 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
       </button>
       <input
         type='text'
-        className='w-full py-2 ml-3 text-5xl font-bold text-center border-2 border-green-500 rounded-md'
-        onChange={handleText}
+        className='w-full py-2 ml-3 text-5xl font-bold text-center border-2 border-green-200 rounded-md'
+        onChange={(e) => setInputText(e.target.value)}
         value={inputText}
       />
     </form>

@@ -1,10 +1,12 @@
-const Todo = ({ text, todo, todos, setTodos }) => {
-  const updateTodo = (id, newVal) => {
-    setTodos((prev) => prev.map((item) => (item.id === id ? newVal : item)));
-  };
+import { useState } from 'react';
 
-  const deleteHandler = () => {
-    setTodos(todos.filter((x) => x.id !== todo.id));
+const Todo = ({ text, deleteHandler, id }) => {
+  const [newValue, setNewValue] = useState(text);
+  const [editValue, setEditValue] = useState(false);
+
+  const updateHandler = (id, e) => {
+    setEditValue(true);
+    setNewValue(e.target.value);
   };
   return (
     <div className='flex flex-row w-full my-2'>
@@ -14,12 +16,20 @@ const Todo = ({ text, todo, todos, setTodos }) => {
       >
         &times;
       </button>
-      <li
-        className='w-full p-3 ml-3 text-5xl text-center border-2 border-gray-600 rounded-xl'
-        onClick={updateTodo}
-      >
-        {text}
-      </li>
+      {editValue ? (
+        <input
+          type='text'
+          value={newValue}
+          onChange={(e) => setNewValue(e.target.value)}
+        />
+      ) : (
+        <li
+          className='w-full p-3 ml-3 text-5xl text-center border-2 border-gray-600 rounded-xl'
+          onClick={(e) => console.log(id, e)}
+        >
+          {text}
+        </li>
+      )}
     </div>
   );
 };
