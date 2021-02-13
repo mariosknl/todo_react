@@ -17,7 +17,6 @@ const Form = () => {
       setTitle('');
     } else {
       editTodo(title, editItem.id);
-      setTitle('');
     }
   };
 

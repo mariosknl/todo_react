@@ -22,6 +22,7 @@ const TodosContextProvider = ({ children }) => {
       todo.id === id ? { title, id } : todo
     );
     setTodos(newTodo);
+    setEditItem(null);
   };
 
   console.log(editItem);
