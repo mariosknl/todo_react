@@ -34,7 +34,12 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit} className={FormStyles}>
       <Button type='submit'>+</Button>
-      <Input value={title} onChange={handleChange} onBlur={handleChange} />
+      <Input
+        value={title}
+        onChange={handleChange}
+        onBlur={handleChange}
+        placeholder='______________'
+      />
     </form>
   );
 };

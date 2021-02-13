@@ -6,6 +6,9 @@ I have created 2 versions of this app stored in different branches in the <b>Git
 
 I have seperated all the css into its own variable inside the <b>styles</b> folder for re-usability.
 
+![LandingPage](src/assets/homepage.png)
+![TodoListPage](src/assets/todoList.png)
+
 ## BUILD WITH
 
 - ReactJs

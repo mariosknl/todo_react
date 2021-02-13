@@ -1,6 +1,6 @@
 import { InputStyles } from '../styles';
 
-const Input = ({ onChange, value, onBlur }) => (
+const Input = ({ onChange, value, onBlur, placeholder }) => (
   <input
     required
     type='text'
@@ -8,6 +8,7 @@ const Input = ({ onChange, value, onBlur }) => (
     onChange={onChange}
     onBlur={onBlur}
     value={value}
+    placeholder={placeholder}
   />
 );
 
