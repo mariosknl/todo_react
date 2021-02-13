@@ -29,8 +29,6 @@ const TodosContextProvider = ({ children }) => {
     setEditItem(null);
   };
 
-  console.log(editItem);
-
   return (
     <TodosContext.Provider
       value={{ todos, addTodo, findItem, editTodo, editItem, removeTodo }}

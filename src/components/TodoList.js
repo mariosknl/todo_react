@@ -6,10 +6,12 @@ const TodoList = () => {
   const { todos } = useContext(TodosContext);
 
   return (
-    <div>
-      {todos.map((todo) => (
-        <Todo todo={todo} key={todo.id} />
-      ))}
+    <div className='w-full mt-2'>
+      <ul className='flex flex-col'>
+        {todos.map((todo) => (
+          <Todo todo={todo} key={todo.id} />
+        ))}
+      </ul>
     </div>
   );
 };

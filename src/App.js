@@ -8,8 +8,10 @@ const App = () => {
   return (
     <TodosContextProvider>
       <Header />
-      <Form />
-      <TodoList />
+      <div className='w-2/4 m-auto'>
+        <Form />
+        <TodoList />
+      </div>
     </TodosContextProvider>
   );
 };

@@ -31,7 +31,10 @@ const Form = () => {
   }, [editItem]);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className='flex flex-row items-center w-full mt-16 justify-items-center'
+    >
       <Button type='submit'>+</Button>
       <Input value={title} onChange={handleChange} onBlur={handleChange} />
     </form>
