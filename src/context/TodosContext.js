@@ -1,10 +1,14 @@
 import { createContext, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useLocalStorage } from '../utils/useLocalStorage';
 
 export const TodosContext = createContext();
 
 const TodosContextProvider = ({ children }) => {
-  const [todos, setTodos] = useState([]);
+  const initialTodos = () =>
+    JSON.parse(window.localStorage.getItem('todods')) || [];
+  // const [todos, setTodos] = useState(initialTodos);
+  const [todos, setTodos] = useLocalStorage('todos', initialTodos);
   const [editItem, setEditItem] = useState(null);
 
   const addTodo = (title) => {
