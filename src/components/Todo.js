@@ -3,7 +3,7 @@ import Button from './Button';
 import Input from './Input';
 import Item from './Item';
 
-const Todo = ({ text, deleteHandler, id, setTodos }) => {
+const Todo = ({ text, deleteHandler, id }) => {
   const [newValue, setNewValue] = useState(text);
   const [editValue, setEditValue] = useState(false);
 

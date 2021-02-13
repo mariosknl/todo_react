@@ -7,14 +7,13 @@ import { useLocalStorage } from './utils/useLocalStorage';
 
 function App() {
   const [inputText, setInputText] = useState('');
-  const [todos, setTodos] = useState([]);
   const initialTodos = () =>
-    JSON.parse(window.localStorage.getItem('todos')) || {};
+    JSON.parse(window.localStorage.getItem('todos')) || [];
   const [storedTodos, setStoredTodos] = useLocalStorage('todos', initialTodos);
 
   useEffect(() => {
-    setStoredTodos(todos);
-  }, [setStoredTodos, todos]);
+    setStoredTodos(storedTodos);
+  }, [setStoredTodos, storedTodos]);
 
   return (
     <div>
@@ -22,11 +21,11 @@ function App() {
       <div className='w-2/4 m-auto'>
         <Form
           inputText={inputText}
-          todos={todos}
-          setTodos={setTodos}
+          todos={storedTodos}
+          setTodos={setStoredTodos}
           setInputText={setInputText}
         />
-        <TodoList todos={storedTodos} setTodos={setTodos} />
+        <TodoList todos={storedTodos} setTodos={setStoredTodos} />
       </div>
     </div>
   );

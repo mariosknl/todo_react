@@ -13,7 +13,6 @@ const TodoList = ({ todos, setTodos }) => {
             key={todo.id}
             id={todo.id}
             text={todo.text}
-            setTodos={setTodos}
             deleteHandler={() => deleteHandler(todo.id)}
           />
         ))}
