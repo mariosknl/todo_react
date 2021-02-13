@@ -1,25 +1,43 @@
-import { v4 as uuidv4 } from 'uuid';
-import Button from './Button';
-import Input from './Input';
+import { useContext, useState, useEffect } from 'react';
+import { TodosContext } from '../context/TodosContext';
 
-const Form = ({ setInputText, todos, setTodos, inputText }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setTodos([...todos, { text: inputText, id: uuidv4() }]);
-    setInputText('');
+const Form = () => {
+  const { addTodo, editItem, editTodo } = useContext(TodosContext);
+
+  const [title, setTitle] = useState('');
+
+  const handleChange = (e) => {
+    setTitle(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (editItem === null) {
+      addTodo(title);
+      setTitle('');
+    } else {
+      editTodo(title, editItem.id);
+      setTitle('');
+    }
+  };
+
+  useEffect(() => {
+    if (editItem !== null) {
+      setTitle(editItem.title);
+    } else {
+      setTitle('');
+    }
+  }, [editItem]);
+
   return (
-    <form
-      className='flex flex-row items-center w-full mt-16 justify-items-center'
-      onSubmit={handleSubmit}
-    >
-      <Button type='submit'>+</Button>
-      <Input
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-        onSubmit={handleSubmit}
-        onBlur={(e) => setInputText(e.target.value)}
+    <form onSubmit={handleSubmit}>
+      <button type='submit'></button>
+      <input
+        type='text'
+        required
+        value={title}
+        onChange={handleChange}
+        className='w-2/4 p-3 mt-4 ml-3 text-5xl font-bold text-center text-green-400 border-2 border-green-200 rounded-xl focus:outline-none focus:underline'
       />
     </form>
   );
