@@ -1,34 +1,13 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import Form from './components/Form';
-import Header from './components/Header';
+import React from 'react';
 import TodoList from './components/TodoList';
-import { useLocalStorage } from './utils/useLocalStorage';
+import TodosContextProvider from './context/TodosContext';
 
-function App() {
-  const [inputText, setInputText] = useState('');
-  const initialTodos = () =>
-    JSON.parse(window.localStorage.getItem('todos')) || [];
-  const [storedTodos, setStoredTodos] = useLocalStorage('todos', initialTodos);
-
-  useEffect(() => {
-    setStoredTodos(storedTodos);
-  }, [setStoredTodos, storedTodos]);
-
+const App = () => {
   return (
-    <div>
-      <Header />
-      <div className='w-2/4 m-auto'>
-        <Form
-          inputText={inputText}
-          todos={storedTodos}
-          setTodos={setStoredTodos}
-          setInputText={setInputText}
-        />
-        <TodoList todos={storedTodos} setTodos={setStoredTodos} />
-      </div>
-    </div>
+    <TodosContextProvider>
+      <TodoList />
+    </TodosContextProvider>
   );
-}
+};
 
 export default App;

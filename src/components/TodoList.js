@@ -1,22 +1,17 @@
+import React, { useContext } from 'react';
+import { TodosContext } from '../context/TodosContext';
 import Todo from './Todo';
 
-const TodoList = ({ todos, setTodos }) => {
-  const deleteHandler = (id) => {
-    setTodos(todos.filter((x) => x.id !== id));
-  };
+const TodoList = () => {
+  const { todos } = useContext(TodosContext);
+
+  console.log(todos);
 
   return (
-    <div className='w-full mt-2'>
-      <ul className='flex flex-col'>
-        {todos.map((todo) => (
-          <Todo
-            key={todo.id}
-            id={todo.id}
-            text={todo.text}
-            deleteHandler={() => deleteHandler(todo.id)}
-          />
-        ))}
-      </ul>
+    <div>
+      {todos.map((todo) => (
+        <Todo todo={todo} key={todo.id} />
+      ))}
     </div>
   );
 };
