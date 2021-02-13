@@ -4,11 +4,15 @@ import { v4 as uuidv4 } from 'uuid';
 export const TodosContext = createContext();
 
 const TodosContextProvider = ({ children }) => {
-  const [todos, setTodos] = useState([{ title: 'marios', id: 1 }]);
+  const [todos, setTodos] = useState([]);
   const [editItem, setEditItem] = useState(null);
 
   const addTodo = (title) => {
     setTodos([...todos, { title, id: uuidv4() }]);
+  };
+
+  const removeTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const findItem = (id) => {
@@ -29,7 +33,7 @@ const TodosContextProvider = ({ children }) => {
 
   return (
     <TodosContext.Provider
-      value={{ todos, addTodo, findItem, editTodo, editItem }}
+      value={{ todos, addTodo, findItem, editTodo, editItem, removeTodo }}
     >
       {children}
     </TodosContext.Provider>
