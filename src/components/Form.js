@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import { TodosContext } from '../context/TodosContext';
 import Button from './Button';
 import Input from './Input';
+import { FormStyles } from '../styles';
 
 const Form = () => {
   const { addTodo, editItem, editTodo } = useContext(TodosContext);
@@ -31,10 +32,7 @@ const Form = () => {
   }, [editItem]);
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className='flex flex-row items-center w-full mt-16 justify-items-center'
-    >
+    <form onSubmit={handleSubmit} className={FormStyles}>
       <Button type='submit'>+</Button>
       <Input value={title} onChange={handleChange} onBlur={handleChange} />
     </form>

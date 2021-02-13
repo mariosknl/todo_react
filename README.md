@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Todo React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project, I have created a ToDo App in two different versions. You can create a task and add it to your list. The task can be added in two ways. You can either click the `plus` button on the left side of the input or you can press the enter key. After the task is populated you can delete it by pressing the <b>X</b> button on its left side or you can edit it furthermore by pressing in the box. Its value will appear in the input field and you simply change anything you want and confirm the chance either by pressing the enter button or the plus button on its left. The list is also saved in the `local storage` of the browser so even if you refresh the page you won't lose your tasks. I have created a custom hook for implementing this functionality named `useLocalStorage`. You can find it in the <b>utils</b> folder.
 
-## Available Scripts
+I have created 2 versions of this app stored in different branches in the <b>Github</b> repository. The main branch is storing the simple version in which I'm passing props into different components so I can control the state of the application. In the second version stored in the `context_API` branch I'm using the <b>Context API</b> provided from <b>React</b> package. I am creating a Context Javascript object using the `useContext` hook and its functions so I can hold the state at the top level of the application. In this way, the state is accessible at any level without needing to pass the props unnecessarily to other components. I am also using `CRACO` which is a package that allows me to override the configuration layer for a create-react-app so I can use TailwindCSS.
 
-In the project directory, you can run:
+I have seperated all the css into its own variable inside the <b>styles</b> folder for re-usability.
 
-### `yarn start`
+## BUILD WITH
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- ReactJs
+- Context API
+- React Hooks
+- Tailwind CSS
+- CRACO
+- UUID
+- Font Awesome Icons
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# SETUP
 
-### `yarn test`
+- `git clone git@github.com:mariosknl/todo_react.git`
+- `npm install` to install the dependencies of this project
+- `npm start` (be sure to be in the `main` branch for the <b>1st</b> version of the application.)
+- stop the server by pressing `control+c` in your keyboard.
+- `git checkout context_API` to navigate to the 2nd branch where you can check the 2nd version mentioned about.
+- `npm start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# AUTHOR
 
-### `yarn build`
+- Github: [@mariosknl](https://github.com/mariosknl)
+- Twitter: [@mariosknl](https://twitter.com/MariosKnl)
+- Linkedln: [marios-kanellopoulos](https://www.linkedin.com/in/marios-kanellopoulos)
+- Portfolio: [marios-kanellopoulos](https://marioskanellopoulos.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Show your support
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Give ⭐️ if you like this project!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Acknowledgments
 
-### `yarn eject`
+- Microverse
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 🤝 Contributing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contributions, issues, and feature requests are welcome!
+Feel free to check the issues page.
