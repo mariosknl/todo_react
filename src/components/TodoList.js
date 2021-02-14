@@ -2,12 +2,14 @@ import { useContext } from 'react';
 import { TodosContext } from '../context/TodosContext';
 import Todo from './Todo';
 
+import { UlStyles, TodoListStyles } from '../styles';
+
 const TodoList = () => {
   const { todos } = useContext(TodosContext);
 
   return (
-    <div className='w-full mt-2'>
-      <ul className='flex flex-col'>
+    <div className={TodoListStyles}>
+      <ul className={UlStyles}>
         {todos.map((todo) => (
           <Todo todo={todo} key={todo.id} />
         ))}
