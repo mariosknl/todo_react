@@ -1,28 +1,14 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { useState } from 'react';
 import Form from './components/Form';
 import Header from './components/Header';
 import TodoList from './components/TodoList';
 import { useLocalStorage } from './utils/useLocalStorage';
-import { v4 as uuidv4 } from 'uuid';
-import Button from './components/Button';
-import Input from './components/Input';
 
 function App() {
   const [inputText, setInputText] = useState('');
   const [editItem, setEditItem] = useState(null);
   const [newValue, setNewValue] = useState('');
   const [todos, setTodos] = useLocalStorage('todos', []);
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    setTodos([...todos, { text: inputText, id: uuidv4() }]);
-    setInputText('');
-  }
-
-  function deleteHandler(id) {
-    setTodos(todos.filter((x) => x.id !== id));
-  }
 
   function editTodo(id) {
     console.log('editting');

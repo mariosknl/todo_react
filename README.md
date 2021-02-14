@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Todo React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project, I have created a ToDo App in two different versions. You can create a task and add it to your list. The task can be added in two ways. You can either click the `plus` button on the left side of the input or you can press the enter key. After the task is populated, you can delete it by pressing the <b>X</b> button on its left side or you can edit it furthermore by pressing in the box. Its value will appear in the gray text in the same box in the first version. You can directly update it into whatever value to want in the same box. Then, you click the <b>PLUS</b> button on its left to update the list. In the 2nd version, you can edit the value in the same way but in this version, the value remains as it is. Its value will appear in the input field and you simply change anything you want and confirm the change either by pressing the enter button or the plus button on its left. The list is also saved in the `local storage` of the browser so even if you refresh the page you won't lose your tasks. I have created a custom hook for implementing this functionality named `useLocalStorage`. You can find it in the <b>utils</b> folder.
 
-## Available Scripts
+The 2 versions of the application are stored in different branches in the <b>Github</b> repository. The <b>MAIN</b> branch is storing the simple version in which I'm passing props into different components so I can control the state of the application. In the 2nd version stored in the `context_API` branch I'm using the <b>Context API</b> provided from <b>React</b> package. I am creating a Context Javascript object using the `useContext` hook and its functions so I can hold the state at the top level of the application. In this way, the state is accessible at any level without needing to pass the props unnecessarily to other components. I am also using `CRACO` which is a package that allows me to override the configuration layer for a create-react-app so I can use TailwindCSS. I have added a validation field in the input field so it cannot be submitted without any text typed in the input field of the form. I thought of adding the ErrorBoundary package which grabs the whole application and renders the possible errors but I haven't seen the need in this small application so that's why I chose not to include it in this project.
 
-In the project directory, you can run:
+I separated all the CSS into a variable inside the <b>styles</b> folder for re-usability. I have added animation to the todo being populated after submitting. Also, the green input field is having a pulse animation. It was not a requirement but I thought it will be a good extra thing to add. Last but not least, the application is responsive and in different screen sizes, the sizes of the inputs and buttons change to smaller or bigger ones.
 
-### `yarn start`
+![LandingPage](src/assets/homepage.png)
+![TodoListPage](src/assets/todoList.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## BUILD WITH
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- ReactJs
+- Context API
+- React Hooks
+- Tailwind CSS
+- CRACO
+- UUID
+- Font Awesome Icons
 
-### `yarn test`
+# SETUP
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `git clone git@github.com:mariosknl/todo_react.git`
+- `npm install` to install the dependencies of this project
+- `npm start` (be sure to be in the `main` branch for the <b>1st</b> version of the application.)
+- stop the server by pressing `control+c` in your keyboard.
+- `git checkout context_API` to navigate to the 2nd branch where you can check the 2nd version mentioned about.
+- `npm start`
 
-### `yarn build`
+# AUTHOR
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Github: [@mariosknl](https://github.com/mariosknl)
+- Twitter: [@mariosknl](https://twitter.com/MariosKnl)
+- Linkedln: [marios-kanellopoulos](https://www.linkedin.com/in/marios-kanellopoulos)
+- Portfolio: [marios-kanellopoulos](https://marioskanellopoulos.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Show your support
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Give ⭐️ if you like this project!
 
-### `yarn eject`
+# Acknowledgments
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Microverse
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🤝 Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contributions, issues, and feature requests are welcome!
+Feel free to check the issues page.

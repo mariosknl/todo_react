@@ -1,7 +1,7 @@
 import Button from './Button';
 import Item from './Item';
 
-import { TodoStyles, LiStyles } from '../styles';
+import { TodoStyles } from '../styles';
 
 const Todo = ({ text, deleteHandler, id, setEditItem }) => {
   return (
