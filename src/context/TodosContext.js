@@ -5,10 +5,7 @@ import { useLocalStorage } from '../utils/useLocalStorage';
 export const TodosContext = createContext();
 
 const TodosContextProvider = ({ children }) => {
-  const initialTodos = () =>
-    JSON.parse(window.localStorage.getItem('todods')) || [];
-  // const [todos, setTodos] = useState(initialTodos);
-  const [todos, setTodos] = useLocalStorage('todos', initialTodos);
+  const [todos, setTodos] = useLocalStorage('todos', []);
   const [editItem, setEditItem] = useState(null);
 
   const addTodo = (title) => {
