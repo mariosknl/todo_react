@@ -1,9 +1,11 @@
 import Button from './Button';
 import Item from './Item';
 
+import { TodoStyles, LiStyles } from '../styles';
+
 const Todo = ({ text, deleteHandler, id, setEditItem }) => {
   return (
-    <div className='flex flex-row w-full my-2'>
+    <div className={TodoStyles}>
       <Button type='button' onClick={deleteHandler}>
         &times;
       </Button>

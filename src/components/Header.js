@@ -1,12 +1,12 @@
 import Logo from '../assets/logo.png';
 
+import { HeaderStyles, HeadingStyles } from '../styles';
+
 const Header = () => {
   return (
-    <div className='flex justify-between w-5/6 items-center border-b-4 border-green-400 p-6 m-auto'>
+    <div className={HeaderStyles}>
       <img src={Logo} alt='logo' />
-      <h1 className='text-2xl text-green-400 font-bold'>
-        The Beagle Todo List
-      </h1>
+      <h1 className={HeadingStyles}>The Beagle Todo List</h1>
     </div>
   );
 };

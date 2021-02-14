@@ -2,6 +2,8 @@ import { v4 as uuidv4 } from 'uuid';
 import Button from './Button';
 import Input from './Input';
 
+import { FormStyles } from '../styles';
+
 const Form = ({ setInputText, todos, setTodos, inputText }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,10 +12,7 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
   };
 
   return (
-    <form
-      className='flex flex-row items-center w-full mt-16 justify-items-center'
-      onSubmit={handleSubmit}
-    >
+    <form className={FormStyles} onSubmit={handleSubmit}>
       <Button type='submit'>+</Button>
       <Input
         value={inputText}

@@ -2,6 +2,8 @@ import Todo from './Todo';
 import Button from './Button';
 import Input from './Input';
 
+import { TodoStyles } from '../styles';
+
 const TodoList = ({
   todos,
   setTodos,
@@ -21,7 +23,7 @@ const TodoList = ({
         {todos.map((todo) => (
           <div key={todo.id}>
             {editItem === todo.id ? (
-              <div className='flex flex-row w-full my-2'>
+              <div className={TodoStyles}>
                 <Button type='submit' onClick={() => editTodo(todo.id)}>
                   +
                 </Button>
