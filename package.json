@@ -12,7 +12,7 @@
     "postcss": "8.4.12",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "react-scripts": "5.0.0",
+    "react-scripts": "5.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@2.2.17",
     "uuid": "8.3.2",
     "web-vitals": "2.1.4"
