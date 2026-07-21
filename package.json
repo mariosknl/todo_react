@@ -10,7 +10,7 @@
     "@testing-library/user-event": "14.6.1",
     "postcss": "8.5.19",
     "autoprefixer": "10.5.4",
-    "react": "19.2.7",
+    "react": "19.2.8",
     "react-dom": "19.2.7",
     "react-scripts": "5.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@2.2.17",
